@@ -8,22 +8,31 @@
     <link href="/dist/output.css" rel="stylesheet">
 </head>
 <body >
-    <div class="h-screen w-screen flex justify-center">
+    <div class="h-screen w-screen flex justify-center items-center">
         <div class="w-full h-full">
           <div class="relative w-full h-full" x-data="carouselData([
-                     { id: 1, url: 'https://burst.shopifycdn.com/photos/mens-fashion-walking-across-bridge-holding-hat.jpg?width=925&format=pjpg&exif=1&iptc=1'},
-                     { id: 2, url: 'https://burst.shopifycdn.com/photos/outdoors-surrounded-by-green-leaves-holding-a-mug.jpg?width=925&format=pjpg&exif=1&iptc=1' },
-                     { id: 3, url: 'https://burst.shopifycdn.com/photos/woman-in-summer-fashion.jpg?width=925&format=pjpg&exif=1&iptc=1' },
-                     { id: 4, url: 'https://burst.shopifycdn.com/photos/fashion-photography-purse-in-hand.jpg?width=925&format=pjpg&exif=1&iptc=1' },
+                     { id: 1, url: 'https://burst.shopifycdn.com/photos/mens-fashion-walking-across-bridge-holding-hat.jpg?width=925&format=pjpg&exif=1&iptc=1', title: 'Title-1', desc: 'One-Lorem ipsum dolor sit amet, consectetur adipisicing elit.'},
+                     { id: 2, url: 'https://burst.shopifycdn.com/photos/outdoors-surrounded-by-green-leaves-holding-a-mug.jpg?width=925&format=pjpg&exif=1&iptc=1', title: 'Title-2', desc: 'Two-Lorem ipsum dolor sit amet, consectetur adipisicing elit.' },
+                     { id: 3, url: 'https://burst.shopifycdn.com/photos/woman-in-summer-fashion.jpg?width=925&format=pjpg&exif=1&iptc=1', title: 'Title-3', desc: 'Three-Lorem ipsum dolor sit amet, consectetur adipisicing elit.' },
+                     { id: 4, url: 'https://burst.shopifycdn.com/photos/fashion-photography-purse-in-hand.jpg?width=925&format=pjpg&exif=1&iptc=1', title: 'Title-4', desc: 'Four-Lorem ipsum dolor sit amet, consectetur adipisicing elit.' },
              ])">
       
             <!-- Slides -->
             <template x-for="slide in slides" :key="slide.id">
-              <div x-show="activeSlide === slide.id" class="font-bold h-full flex items-center justify-center bg-indigo-600 text-white">
-                <img class = "h-full w-full object-cover" :src="slide.url">    
+              <div x-show="activeSlide === slide.id" class="font-bold h-full flex items-center justify-center">
+                <img class = "h-full w-full object-cover" :src="slide.url">  
+                <div class="absolute inset-0 w-auto mx-auto flex justify-center items-center h-auto">
+                  <div class=" bg-white text-center p-8">
+                    <h2 x-text="slide.title" class="mb-2 text-3xl"></h2>
+                    <p x-text="slide.desc" class="mb-7"></p>
+                    <button type='button' class="cursor-pointer bg-black text-white px-9 py-4">
+                      Shop Now  
+                    </button>
+                  </div>
+                </div>  
               </div>
             </template>
-      
+          
             <!-- Prev/Next Arrows -->
             <div class="absolute inset-0 flex justify-between items-center">
                 <button @click="goToPrevious()" class="text-white text-4xl font-extrabold w-20 h-20 ml-6">
@@ -35,7 +44,6 @@
             </div>
           </div>
         </div>
-      
       </div>
 
       <script src="//unpkg.com/alpinejs" defer></script>
