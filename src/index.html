@@ -8,12 +8,12 @@
     <link href="/dist/output.css" rel="stylesheet">
 </head>
 <body >
-          <div class="relative h-screen w-screen" x-data="carouselData([
+          <div id="slider" class="relative h-screen w-screen" x-data="carouselData([
                      { id: 1, url: 'https://burst.shopifycdn.com/photos/mens-fashion-walking-across-bridge-holding-hat.jpg?width=925&format=pjpg&exif=1&iptc=1', title: 'Title-1', desc: 'One-Lorem ipsum dolor sit amet, consectetur adipisicing elit.'},
                      { id: 2, url: 'https://burst.shopifycdn.com/photos/outdoors-surrounded-by-green-leaves-holding-a-mug.jpg?width=925&format=pjpg&exif=1&iptc=1', title: 'Title-2', desc: 'Two-Lorem ipsum dolor sit amet, consectetur adipisicing elit.' },
                      { id: 3, url: 'https://burst.shopifycdn.com/photos/woman-in-summer-fashion.jpg?width=925&format=pjpg&exif=1&iptc=1', title: 'Title-3', desc: 'Three-Lorem ipsum dolor sit amet, consectetur adipisicing elit.' },
                      { id: 4, url: 'https://burst.shopifycdn.com/photos/fashion-photography-purse-in-hand.jpg?width=925&format=pjpg&exif=1&iptc=1', title: 'Title-4', desc: 'Four-Lorem ipsum dolor sit amet, consectetur adipisicing elit.' },
-             ])">
+             ])" x-init="initHandleSwipe()">
       
             <!-- Slides -->
             <template x-for="slide in slides" :key="slide.id">
@@ -37,7 +37,6 @@
                 &rang;
             </button>
           </div>
-       
 
       <script src="//unpkg.com/alpinejs" defer></script>
       <script src="main.js"></script>
