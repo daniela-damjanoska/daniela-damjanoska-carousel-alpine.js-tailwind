@@ -19,10 +19,10 @@
             <template x-for="slide in slides" :key="slide.id">
               <div x-show="activeSlide === slide.id" class="h-full">
                 <img class = "h-full w-full object-cover" :src="slide.url">  
-                <div class="absolute bottom-1/2 left-1/2 -translate-x-2/4 translate-y-2/4 bg-white p-8 text-center">
+                <div class="absolute bottom-1/2 left-1/2 -translate-x-2/4 translate-y-2/4 bg-white p-5 md:p-7  leading-5 md:leading-8 text-center">
                     <h2 x-text="slide.title" class="mb-2 text-3xl"></h2>
                     <p x-text="slide.desc" class="mb-7"></p>
-                    <a class=" bg-black text-white px-9 py-4 hover:opacity-80" href="#">
+                    <a class=" bg-black text-white px-6 py-2 md:px-9 md:py-4 hover:opacity-80" href="#">
                       Shop Now  
                     </a>
                 </div>   
