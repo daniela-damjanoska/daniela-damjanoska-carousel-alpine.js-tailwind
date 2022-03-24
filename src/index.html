@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carosusel</title>
     <link href="/dist/output.css" rel="stylesheet">
+    <!-- <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script> -->
 </head>
 <body >
-          <div id="slider" class="relative h-screen w-screen cursor-grab" x-data="carouselData([
+          <div id="slider" class="relative h-screen w-screen" x-data="carouselData([
                      { id: 1, url: 'https://burst.shopifycdn.com/photos/mens-fashion-walking-across-bridge-holding-hat.jpg?width=925&format=pjpg&exif=1&iptc=1', title: 'Title-1', desc: 'One-Lorem ipsum dolor sit amet, consectetur adipisicing elit.'},
                      { id: 2, url: 'https://burst.shopifycdn.com/photos/outdoors-surrounded-by-green-leaves-holding-a-mug.jpg?width=925&format=pjpg&exif=1&iptc=1', title: 'Title-2', desc: 'Two-Lorem ipsum dolor sit amet, consectetur adipisicing elit.' },
                      { id: 3, url: 'https://burst.shopifycdn.com/photos/woman-in-summer-fashion.jpg?width=925&format=pjpg&exif=1&iptc=1', title: 'Title-3', desc: 'Three-Lorem ipsum dolor sit amet, consectetur adipisicing elit.' },
@@ -18,7 +19,7 @@
             <!-- Slides -->
             <template x-for="slide in slides" :key="slide.id">
               <div x-show="activeSlide === slide.id" class="h-full">
-                <img class = "h-full w-full object-cover" :src="slide.url">  
+                <img class = "h-full w-full object-cover" :src="slide.url"/>  
                 <div class="absolute bottom-1/2 left-1/2 -translate-x-2/4 translate-y-2/4 bg-white p-5 md:p-7  leading-5 md:leading-8 text-center">
                     <h2 x-text="slide.title" class="mb-2 text-3xl"></h2>
                     <p x-text="slide.desc" class="mb-7"></p>

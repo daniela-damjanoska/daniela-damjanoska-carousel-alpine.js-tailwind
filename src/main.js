@@ -8,6 +8,10 @@ function carouselData(slides) {
       initHandleSwipe() {
         const slider = document.getElementById('slider');
 
+        setInterval(() => {
+          this.activeSlide =
+            this.activeSlide === this.slides.length ? 1 : this.activeSlide + 1}, 3000)
+
         // slider.addEventListener('mouseup', e => {
         //   touchendX = e.clientY
         // })
@@ -39,6 +43,7 @@ function carouselData(slides) {
           }
         })
       },
+      
       goToPrevious() {
         this.activeSlide =
         this.activeSlide === 1 ? this.slides.length : this.activeSlide - 1;
